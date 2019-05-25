@@ -1,6 +1,8 @@
+import { ApiService } from './services/api.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -11,6 +13,9 @@ import { NovelaDetailComponent } from './components/novelas/novela-detail/novela
 import { NovelaEditComponent } from './components/novelas/novela-edit/novela-edit.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { CarrouselComponent } from './shared/components/carrousel/carrousel.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ComicsComponent } from './components/comics/comics.component';
+import { GenderCardsComponent } from './shared/components/gender-cards/gender-cards.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +27,18 @@ import { CarrouselComponent } from './shared/components/carrousel/carrousel.comp
     NovelaDetailComponent,
     NovelaEditComponent,
     CardComponent,
-    CarrouselComponent
+    CarrouselComponent,
+    ComicsComponent,
+    GenderCardsComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+      ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
